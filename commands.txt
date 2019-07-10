@@ -1,0 +1,17 @@
+mkdir cigna_challenge && cd cigna_challenge
+git init
+touch .gitignore
+python3 -m venv ./env
+source env/bin/activate
+pip install django djangorestframework django-auth-ldap python-ldap
+pip freeze > requirements.txt
+jdango-admin startproject dealership
+cd dealership
+./manana.py startapp api
+./manana.py startapp accounts
+./manana.py startapp pages
+./manana.py startapp inventory
+./manana.py makemigrations
+./manana.py migrate
+./manana.py collectstatic
+
