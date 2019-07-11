@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 
+from django.core.paginator import Paginator
+
 from .models import Vehicle
 
 # Create your views here.
@@ -18,4 +20,15 @@ def inventory(request):
         messages.success(request, 'Vehicle successfuly added')
 
         vehicle.save()
+        redirect('add')
+    else:
         return render(request, 'inventory/add.html')
+
+def dashboard(request):
+        vehicle_list = Vehicle.objects.all()
+
+        context = {
+                'listing': vehicle_list
+        }
+
+        return render(request, 'inventory/dashboard.html', context)
