@@ -1,10 +1,13 @@
 from django.db import models
 from datetime import datetime
 
+from django.contrib.auth.models import User
+
 import uuid
 
 # Create your models here.
 class Vehicle(models.Model):
+    user = models.ForeignKey(User, on_delete='models.CASCADE')
     make = models.CharField(max_length=200)
     model = models.CharField(max_length=200)
     description = models.TextField(blank=True)

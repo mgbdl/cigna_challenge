@@ -12,6 +12,7 @@
               <thead>
                 <tr>
                   <th scope="col">#</th>
+                  <th scope="col">User</th>
                   <th scope="col">Lot #</th>
                   <th scope="col">Make</th>
                   <th scope="col">Model</th>
@@ -24,7 +25,9 @@
                 {%for vehicle in listing%}
                 <tr>
                   <td>{{ vehicle.id }}</td>
+                  <td>{{ vehicle.user }}</td>
                   <td>{{ vehicle.lot_number }}</td>
+                  <td>{{ vehicle.make }}</td>
                   <td>{{ vehicle.model }}</td>
                   <td>{{ vehicle.doors }}</td>
                   <td>{{ vehicle.color }}</td>
