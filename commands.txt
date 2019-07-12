@@ -7,11 +7,11 @@ pip install django djangorestframework django-auth-ldap python-ldap
 pip freeze > requirements.txt
 jdango-admin startproject dealership
 cd dealership
-./manana.py startapp api
-./manana.py startapp accounts
-./manana.py startapp pages
-./manana.py startapp inventory
-./manana.py makemigrations
-./manana.py migrate
-./manana.py collectstatic
+./manage.py startapp api
+./manage.py startapp accounts
+./manage.py startapp pages
+./manage.py startapp inventory
+./manage.py makemigrations
+./manage.py migrate
+./manage.py collectstatic
 
